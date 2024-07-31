@@ -14,7 +14,23 @@ var root = {
   
   var hueFw = false;
   var hue = -0.01;
-  
+  // Ajustar el tamaño del canvas
+function resizeCanvas() {
+  c.width = window.innerWidth;
+  c.height = window.innerHeight;
+  columns = c.width / font_size;
+  drops = [];
+  for (var x = 0; x < columns; x++) {
+      drops[x] = 1;
+  }
+}
+
+// Inicializar el tamaño del canvas
+resizeCanvas();
+
+// Volver a ajustar el tamaño del canvas cuando la ventana cambie de tamaño
+window.addEventListener('resize', resizeCanvas);
+
   // Hacer que el canvas ocupe toda la pantalla
   c.height = window.innerHeight;
   c.width = window.innerWidth;
